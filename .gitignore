@@ -29,6 +29,7 @@ config/secrets.yml
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
+
 sync_db
 *.sql
 *.psql
@@ -41,3 +42,4 @@ public/images/*
 config/database.yml
 *.rails2
 config/application.yml
+
