@@ -1,0 +1,8 @@
+.video_entry
+  %p
+    - vid = item.location.scan(/\d+$/)
+    = raw item.location
+    %p
+      = raw  item.description
+    - if current_user
+      = link_to '[edit]', edit_admin_video_path(item)

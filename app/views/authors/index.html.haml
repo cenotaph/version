@@ -1,0 +1,13 @@
+%h1 Listing authors
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Website
+  - for author in @authors
+    %tr
+      %td= h author.name
+      %td= h author.description
+      %td= h author.website
+      %td= link_to 'Show', author
+%br/

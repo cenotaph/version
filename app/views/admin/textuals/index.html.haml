@@ -1,0 +1,20 @@
+.admin_list
+  %h1 textuals
+  %table{:cellspacing => "5"}
+    %tr
+      %th Title
+      %th Author
+      %th Category
+      %th Date
+    - for textual in  @textuals
+      %tr
+        %td= h textual.title
+        %td= h textual.author.name
+        %td= h textual.category.name
+        %td= h textual.created_at.strftime("%Y-%m-%d")
+        %td= link_to 'Show', [:admin, textual]
+        %td= link_to 'Edit', edit_admin_textual_path(textual)
+        %td= link_to 'Destroy', [:admin, textual], :confirm => 'Are you sure?', :method => :delete
+  %br/
+  %span.admin_new
+    = link_to 'New textual', new_admin_textual_path

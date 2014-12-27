@@ -1,0 +1,5 @@
+.text_entry
+  %p
+    = raw item.content
+  - if current_user
+    = link_to '[edit]', edit_admin_textual_path(item)

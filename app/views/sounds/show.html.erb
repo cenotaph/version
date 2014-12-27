@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @sound.title %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @sound.user %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @sound.category %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @sound.description %>
+</p>
+
+<p>
+  <b>Soundfile:</b>
+  <%=h @sound.soundfile %>
+</p>
+
+
+<%= link_to 'Edit', edit_sound_path(@sound) %> |
+<%= link_to 'Back', sounds_path %>

@@ -1,0 +1,12 @@
+td {
+    padding: 2px;
+}
+tr.odd {
+    background-color: #ededed;
+    border-collapse: collapse;
+}
+
+.admin_show {
+    clear: left;
+    padding-top: 50px;
+}

@@ -1,0 +1,20 @@
+%h1 Listing sounds
+%table
+  %tr
+    %th Title
+    %th User
+    %th Category
+    %th Description
+    %th Soundfile
+  - for sound in @sounds
+    %tr
+      %td= h sound.title
+      %td= h sound.user
+      %td= h sound.category
+      %td= h sound.description
+      %td= h sound.soundfile
+      %td= link_to 'Show', sound
+      %td= link_to 'Edit', edit_sound_path(sound)
+      %td= link_to 'Destroy', sound, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New sound', new_sound_path

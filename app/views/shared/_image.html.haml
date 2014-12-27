@@ -1,0 +1,28 @@
+                
+.image_entry
+  #print_slides
+    = image_tag item.image1.url(:slide)
+    = image_tag item.image2.url(:slide)
+    = image_tag item.image3.url(:slide)
+    = image_tag item.image4.url(:slide)
+    = image_tag item.image5.url(:slide)
+
+  #slideshow-container.manual.fade
+    %ul.slideshow
+      %li= image_tag item.image1.url(:slide)
+      %li= image_tag item.image2.url(:slide)
+      %li= image_tag item.image3.url(:slide)
+      %li= image_tag item.image4.url(:slide)
+      %li= image_tag item.image5.url(:slide)
+
+  - unless @sslaunch.blank?
+    = @sslaunch
+  %br/
+  %br/
+  - if current_user
+    = link_to '[edit]', edit_admin_image_path(item)
+
+:javascript
+  $(document).ready(function() {  
+    slideShow(5000);
+    });

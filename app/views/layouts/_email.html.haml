@@ -1,0 +1,7 @@
+.close{:onclick => "Effect.Fade('emailpopup', {duration: 0.4});", :style => "cursor:pointer"}
+#emailform.form
+  - form_tag :url => '/posts/send_item_email', :remote => true, :update => 'emailform' do
+    = hidden_field :email, :id, :value => @post.item.id
+    = hidden_field :email, :class, :value => @post.item.class
+    = text_field :email, :email
+    = submit_tag 'Submit', :style => 'margin-top: 10px'

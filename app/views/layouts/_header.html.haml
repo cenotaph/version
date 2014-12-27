@@ -1,0 +1,12 @@
+.version_header
+  .logo= link_to image_tag("/images/v_logo.png"), '/'
+  .navigation
+    %ul
+      = link_to posts_path, {:class => 'content'} do
+        %li.content
+      = link_to '/about', {:class => :content} do
+        %li.about
+      = link_to contributors_path, {:class => :content} do
+        %li.contributors
+      = link_to 'http://version.us1.list-manage.com/subscribe?u=8b58079f5c844965bb0a51e3e&id=9a07221dbe' do
+        %li.subscribe

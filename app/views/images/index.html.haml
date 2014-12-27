@@ -1,0 +1,26 @@
+%h1 Listing images
+%table
+  %tr
+    %th Title
+    %th User
+    %th Category
+    %th Image1
+    %th Image2
+    %th Image3
+    %th Image4
+    %th Image5
+  - for image in @images
+    %tr
+      %td= h image.title
+      %td= h image.user
+      %td= h image.category
+      %td= h image.image1
+      %td= h image.image2
+      %td= h image.image3
+      %td= h image.image4
+      %td= h image.image5
+      %td= link_to 'Show', image
+      %td= link_to 'Edit', edit_image_path(image)
+      %td= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New image', new_image_path

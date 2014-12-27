@@ -1,0 +1,18 @@
+.admin_item
+  %h1 New author
+  = form_for([:admin, @author]) do |f|
+    %p
+      = f.label :name
+      %br/
+      = f.text_field :name
+    %p
+      = f.label :description
+      %br/
+      = f.text_area :description
+    %p
+      = f.label :website
+      %br/
+      = f.text_field :website
+    %p
+      = f.submit "Create"
+  = link_to 'Back', admin_authors_path

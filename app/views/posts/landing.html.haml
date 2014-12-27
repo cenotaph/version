@@ -1,0 +1,14 @@
+:javascript
+  var browser = navigator.appName
+  var ver = navigator.appVersion
+  var thestart = parseFloat(ver.indexOf("MSIE"))+1
+  var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
+  
+  if ((browser=="Microsoft Internet Explorer") && (brow_ver <= 6))
+  {
+  window.location="/redirect.html";
+  }
+.version_wrapper
+  .top_modules
+    - @posts.each_index do |p|
+      = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p], :side => ''}

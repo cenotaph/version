@@ -1,0 +1,18 @@
+%p
+  %b Title:
+  = h @sound.title
+%p
+  %b User:
+  = h @sound.user
+%p
+  %b Category:
+  = h @sound.category
+%p
+  %b Description:
+  = h @sound.description
+%p
+  %b Soundfile:
+  = h @sound.soundfile
+= link_to 'Edit', edit_sound_path(@sound)
+|
+\#{link_to 'Back', sounds_path}

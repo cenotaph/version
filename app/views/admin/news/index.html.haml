@@ -1,0 +1,18 @@
+.admin_list
+  %h1 Listing news
+  %table
+    %tr
+      %th Title
+      %th Content
+      %th User
+    - for news in @news
+      %tr
+        %td= h news.title
+        %td= h raw truncate(news.contenxt, :length => 300)
+        %td= h news.user.realname
+        %td= link_to 'Show', news
+        %td= link_to 'Edit', edit_admin_news_path(news)
+        %td= link_to 'Destroy', [:admin, news], :confirm => 'Are you sure?', :method => :delete
+  %br/
+  %span.admin_new
+    = link_to 'New news', new_admin_news_path

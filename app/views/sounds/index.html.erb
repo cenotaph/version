@@ -1,0 +1,28 @@
+<h1>Listing sounds</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Soundfile</th>
+  </tr>
+
+<% for sound in @sounds %>
+  <tr>
+    <td><%=h sound.title %></td>
+    <td><%=h sound.user %></td>
+    <td><%=h sound.category %></td>
+    <td><%=h sound.description %></td>
+    <td><%=h sound.soundfile %></td>
+    <td><%= link_to 'Show', sound %></td>
+    <td><%= link_to 'Edit', edit_sound_path(sound) %></td>
+    <td><%= link_to 'Destroy', sound, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New sound', new_sound_path %>

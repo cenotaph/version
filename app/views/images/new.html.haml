@@ -1,0 +1,38 @@
+%h1 New image
+- form_for(@image) do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :user
+    %br/
+    = f.text_field :user
+  %p
+    = f.label :category
+    %br/
+    = f.text_field :category
+  %p
+    = f.label :image1
+    %br/
+    = f.text_field :image1
+  %p
+    = f.label :image2
+    %br/
+    = f.text_field :image2
+  %p
+    = f.label :image3
+    %br/
+    = f.text_field :image3
+  %p
+    = f.label :image4
+    %br/
+    = f.text_field :image4
+  %p
+    = f.label :image5
+    %br/
+    = f.text_field :image5
+  %p
+    = f.submit "Create"
+= link_to 'Back', images_path

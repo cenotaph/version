@@ -1,0 +1,18 @@
+.category_filter
+  .categories
+    %h2
+    .category_list
+      %ul
+        - @categories.each do |cat|
+          %li
+            %a{:href => "#"}= link_to cat.name, {:controller => 'posts', :action => 'cat', :id => cat.friendly_id}
+        %li{:style => "border-right:none;"}
+          %a{:href => "/posts"} all
+  #tagbox.keywords{:onclick => "$('#tagdd').slideToggle();"}
+    %h2
+    %a{:href => "#"}
+    #tagdd.dropdown{:style => "display:none"}
+      .list
+        %ul
+          - @tags.each do |tag|
+            %li= link_to tag.name, {:controller => 'posts', :action => 'tag', :id => tag.name}

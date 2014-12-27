@@ -1,0 +1,15 @@
+%p
+  %b Title:
+  = h @textual.title
+%p
+  %b User:
+  = h @textual.user
+%p
+  %b Category:
+  = h @textual.category
+%p
+  %b Content:
+  = h @textual.content
+= link_to 'Edit', edit_textual_path(@textual)
+|
+\#{link_to 'Back', textuals_path}

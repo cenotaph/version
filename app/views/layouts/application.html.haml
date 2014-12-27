@@ -1,0 +1,81 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %META{:CONTENT => "Version is a cultural journal of experiential scenes and intensive encounters. It encourages performative forms of engagement that, working allegorically, can span specialized discourses, genre categories, and disciplinary divides.", :NAME => "Description"}
+      %META{:CONTENT => "version, journal, version journal, cultural journal, online journal, art journal, media journal, media, art, writing, video, sound, encounters, performance, performative, discourse, jordan crandall, caleb waldorf", :NAME => "keywords"}
+        %title
+          v.
+          - if controller.action_name == 'landing'
+            home
+          - elsif controller.controller_name == 'news'
+            news
+          - elsif controller.action_name == 'show' || controller.action_name == 'index'
+            content
+          - else
+            = controller.action_name
+        = stylesheet_link_tag :application
+        = javascript_include_tag 'ufo'
+        = javascript_include_tag :application
+        = stylesheet_link_tag 'slideshow'
+        - if request.fullpath =~ /^\/admin/
+          = stylesheet_link_tag 'cms' 
+          = javascript_include_tag "autocomplete-rails.js"
+          = javascript_include_tag 'use_tinymce_init' 
+        %link{:href => "/stylesheets/print.css", :media => "print", :rel => "stylesheet", :type => "text/css"}/
+        = javascript_include_tag 'audio-player'
+        :javascript
+          AudioPlayer.setup("/player.swf", {  
+            width: 600,  
+            initialvolume: 100,  
+            transparentpagebg: "yes",  
+            left: "000000",  
+            voltrack: "AD2026",
+            lefticon: "FFFFFF",
+            rightbg: "AD2026",
+            rightbghover: "666666",
+            righticon: "FFFFFF",  
+            tracker: "ffffff",
+            track:"eaeaea",
+            loader:"AD2026",
+            autostart: "yes",
+            noinfo: "yes",
+            });  
+        %link{:href => "http://www.version.org/feed/", :rel => "alternate", :title => " - RSS", :type => "application/rss+xml"}/
+        = javascript_include_tag 'slideshow'
+  %body
+    - if flash[:notice]
+      %p{:style => "color: #cccccc; font-size:14px; font-weight:bold; padding-bottom:40px;"}= flash[:notice]
+    = render :partial => 'layouts/header'
+    - if user_signed_in?
+      %br{:clear => "all"}
+        %div
+          = render :partial => 'layouts/adminmenu'
+    = yield
+    %footer
+      %br{:clear => "all"}
+        .support
+          %a{:href => "http://visarts.ucsd.edu/", :target => "_blank"}
+            %img{:src => "/images/logos/visarts.png"}/
+          %a{:href => "http://dah.ucsd.edu/", :target => "_blank"}
+            %img{:src => "/images/logos/dash.png"}/
+          %a{:href => "http://www.calit2.net/", :target => "_blank"}
+            %img{:src => "/images/logos/calit2.png"}/
+          %a{:href => "http://humctr.ucsd.edu/", :target => "_blank"}
+            %img{:src => "/images/logos/ch.png"}/
+          %a{:href => "http://lab.softwarestudies.com/", :target => "_blank"}
+            %img{:src => "/images/logos/software_studies.png"}/
+          %a{:href => "http://www.ucira.ucsb.edu/index.html", :target => "_blank"}
+            %img{:src => "/images/logos/ucira.png"}/
+          %a{:href => "http://crca.ucsd.edu/", :target => "_blank"}
+            %img{:src => "/images/logos/crca.png"}/
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-7515501-1', 'auto');
+      ga('send', 'pageview');
+      $(document).ready(function() {
+        #{yield :jquery}
+      });

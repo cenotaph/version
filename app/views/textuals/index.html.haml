@@ -1,0 +1,20 @@
+%h1 Listing textuals
+%table
+  %tr
+    %th Title
+    %th User
+    %th Category
+    %th Content
+  - for textual in @textuals
+    %tr
+      %td= h textual.title
+      %td= h textual.user.realname
+      %td= h textual.category.name
+      %td= h textual.content
+      %td= link_to 'Show', textual
+      - if  current_user
+        %td= link_to 'Edit', edit_admin_textual_path(textual)
+        %td= link_to 'Destroy', [:admin, textual], :confirm => 'Are you sure?', :method => :delete
+%br/
+- if  current_user
+  = link_to 'New textual', new_textual_path

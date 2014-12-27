@@ -1,0 +1,28 @@
+.admin_list
+  %h1 images
+  %table
+    %tr
+      %th Title
+      %th Author
+      %th Category
+      %th Image1
+      %th Image2
+      %th Image3
+      %th Image4
+      %th Image5
+    - for image in @images
+      %tr{:class => cycle('odd', 'even')}
+        %td= h image.title
+        %td= h image.author_name
+        %td= h image.category.name
+        %td= image_tag image.image1.url(:thumb)
+        %td= image_tag image.image2.url(:thumb)
+        %td= image_tag image.image3.url(:thumb)
+        %td= image_tag image.image4.url(:thumb)
+        %td= image_tag image.image5.url(:thumb)
+        %td= link_to 'Show', image
+        %td= link_to 'Edit', edit_admin_image_path(image)
+        %td= link_to 'Destroy', [:admin, image], :confirm => 'Are you sure?', :method => :delete
+  %br/
+  %span.admin_new
+    = link_to 'New image', new_admin_image_path

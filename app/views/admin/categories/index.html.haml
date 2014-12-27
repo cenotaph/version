@@ -1,0 +1,14 @@
+%h1 Listing categories
+%table
+  %tr
+    %th Name
+    %th Description
+  - for category in @categories
+    %tr
+      %td= h category.name
+      %td= h category.description
+      %td= link_to 'Show', [:admin, category]
+      %td= link_to 'Edit', edit_admin_category_path(category)
+      %td= link_to 'Destroy', [:admin, category], :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New category', new_admin_category_path

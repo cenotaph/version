@@ -1,0 +1,36 @@
+.version_wrapper
+  .left_column
+    .context
+      %h2
+      %p.top_links{:style => "padding-top:30px;"}
+        %a{:href => "http://dada.version.org/cgi-bin/mail.cgi/list/v.mail/"}>
+          %img{:src => "/images/mail.png", :width => "32px;"}/
+        Subscribe to our
+        %a{:href => "http://version.us1.list-manage.com/subscribe?u=8b58079f5c844965bb0a51e3e&id=9a07221dbe"} mailing list.
+      %p.top_links
+        %a{:href => "http://version.org/feed"}>
+          %img{:src => "/images/rss.png"}/
+        Subscribe to our
+        %a{:href => "http://version.org/feed"} RSS
+        Feed.
+      %p.top_links
+        %a{:href => "http://www.facebook.com/group.php?gid=56842966943", :target => "_blank"}>
+          %img{:src => "/images/facebook.png"}/
+        Join our
+        %a{:href => "http://www.facebook.com/group.php?gid=56842966943", :target => "_blank"} Facebook
+        group.
+      %p.top_links
+        %a{:href => "https://twitter.com/version_journal", :target => "_blank"}>
+          %img{:src => "/images/twitter.png"}/
+        Follow us on
+        = succeed "." do
+          %a{:href => "https://twitter.com/version_journal", :target => "_blank"} Twitter
+      %p.top_links{:style => "border-bottom: 1px solid #EAEAEA; padding-bottom:20px;"}
+        %a{:href => "http://www.vimeo.com/versionjournal", :target => "_blank"}>
+          %img{:src => "/images/vimeo.png"}/
+        Visit our
+        %a{:href => "http://www.vimeo.com/versionjournal", :target => "_blank"} Vimeo
+        page.
+  .right_column
+    - @posts.each_index do |p|
+      = render :partial => 'layouts/component', :locals => { :@item  => @posts[p], :side => ''}

@@ -1,0 +1,12 @@
+.version_wrapper
+  = render :partial => 'layouts/categoryfilter'
+.version_module_closed_wrapper
+  - item = @item
+  - @posts.each_index do |p|
+    = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p], :side => p.to_s}
+
+  - @item = item
+#overlay.version_module_expanded_wrapper
+  #ajaxtarget.version_module_expanded
+    = render :partial => 'layouts/om', :locals => {:item => @item }
+      

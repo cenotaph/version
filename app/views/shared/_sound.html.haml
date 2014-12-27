@@ -1,0 +1,9 @@
+.sound_entry
+  %p.sound_description
+    = h item.description
+  %p
+    %p{:id => "#{item.id.to_s}_sound"} You need flash installed.
+    :javascript
+      AudioPlayer.embed("#{item.id.to_s}_sound", {soundFile: "#{item.soundfile.url}"});  
+  - if current_user
+    = link_to '[edit]', edit_admin_sound_path(@item)

@@ -1,0 +1,44 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Untitled Document
+    :css
+      body {
+      font: Arial, Helvetica, sans-serif;
+      color:#000000;
+      font-size: 12px;
+      }
+      
+      
+      .style1 {
+      	font-size: 11px
+      }
+  %body
+    %table{:border => "0", :width => "600"}
+      %tr
+        %td
+          %img{:height => "43", :src => "http://www.version.org/images/header_vlogo.png", :width => "46"}/
+          %strong
+            \.#{@category}.#{@article.author.name} / #{@article.title}.#{@article.created_at.strftime("%m/%d/%y")}
+      %tr
+        %td
+          %p.style1= @article.slug
+          %hr/
+      %tr
+        %td
+          - if @clazz == 'Image'
+            = image_tag 'http://www.version.org'+url_for_file_column(@article, "image1", "slide")
+            %br/
+            = image_tag 'http://www.version.org'+url_for_file_column(@article, "image2", "slide")
+            %br/
+            = image_tag 'http://www.version.org'+url_for_file_column(@article, "image3", "slide")
+            %br/
+            = image_tag 'http://www.version.org'+url_for_file_column(@article, "image4", "slide")
+            %br/
+            = image_tag 'http://www.version.org'+url_for_file_column(@article, "image5", "slide")
+            %br/
+            %br/
+          - elsif @clazz == 'Textual'
+            = @article.content
+          %p Sent via Version (www.version.org)

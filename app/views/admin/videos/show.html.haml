@@ -1,0 +1,21 @@
+%p
+  %b Title:
+  = h @video.title
+%p
+  %b Author:
+  = h @video.author.name
+%p
+  %b User:
+  = h @video.user.realname
+%p
+  %b Category:
+  = h @video.category.name
+%p
+  %b Location:
+  = raw @video.location
+%p
+  %b Description:
+  = h @video.description
+= link_to 'Edit', edit_admin_video_path(@video)
+|
+\#{link_to 'Back', videos_path}

@@ -1,0 +1,37 @@
+
+
+		.mysite_title1 {
+		background-color: #fff;
+		Font-Weight: bold;
+		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		color: #3f3f3f;
+		padding:3px;
+		margin:3px;}
+
+		a.mysite_title_link1{
+		color:#ffffff;
+		font-size : 13px;
+		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		}
+
+		.mysite_content1 {
+		background : #fff;
+		border : 1 solid #eaeaea;
+		padding : 3px;
+		margin : 3px;
+		color : #3f3f3f;
+		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-size : 12px;
+		width: 300;
+		valign : top;
+		}
+
+		a.mysite_item_links1{
+		color:#003399;
+		font-size : 12px;
+		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		line-height: 25px;
+		}
+
+
+				

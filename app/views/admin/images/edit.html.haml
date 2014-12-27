@@ -1,0 +1,82 @@
+.admin_item
+  %h1 Editing image
+  - form_for([:admin,@image] , :html => {:multipart => true}) do |f|
+    = f.error_messages
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+    %p
+      = f.label :author_name
+      %br/
+      = f.autocomplete_field :author_name, autocomplete_author_name_admin_textuals_path
+    = f.hidden_field :user_id, {:value => current_user.id}
+    %p
+      = f.label :category
+      %br/
+      = f.collection_select :category_id, Category.find(:all), :id, :name
+    %p
+      = f.label :thumbnail
+      - unless f.object.thumbnail.blank?
+        = image_tag f.object.thumbnail.url(:thumb)
+      %br/
+      = f.file_field :thumbnail
+    %p
+      = f.label "short_description - limit to 500 words"
+      %br/
+      = f.text_area :short_description
+    %hr{:width => "50%"}
+      %p
+        = f.label :image1
+        %br/
+        = image_tag f.object.image1.url(:thumb)
+        %br/
+        Replace: 
+        = f.file_field :image1
+        %br/
+        %br/
+      %p
+        = f.label :image2
+        %br/
+        = image_tag f.object.image2.url(:thumb)
+        %br/
+        Replace: 
+        = f.file_field :image2
+        %br/
+        %br/
+      %p
+        = f.label :image3
+        %br/
+        = image_tag f.object.image3.url(:thumb)
+        %br/
+        Replace: 
+        = f.file_field :image3
+        %br/
+        %br/
+      %p
+        = f.label :image4
+        %br/
+        = image_tag f.object.image4.url(:thumb)
+        %br/
+        Replace: 
+        = f.file_field :image4
+        %br/
+        %br/
+      %p
+        = f.label :image5
+        %br/
+        = image_tag f.object.image5.url(:thumb)
+        %br/
+        Replace: 
+        = f.file_field :image5
+        %br/
+        %br/
+      %p
+        Tags (separate by commas):
+        %br/
+        = f.text_field :tag_list
+      %p
+        = f.submit "Update"
+  = link_to 'Show', @image
+  |
+  \#{link_to 'Back', admin_images_path}

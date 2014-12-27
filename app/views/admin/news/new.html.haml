@@ -1,0 +1,16 @@
+.admin_item
+  %h1 New news
+  = form_for([:admin, @news]) do |f|
+
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+    %p
+      = f.label :contenxt
+      %br/
+      = f.text_area :contenxt , :class => "mceEditor"
+    = f.hidden_field :user_id, {:value => current_user.id}
+    %p
+      = f.submit "Create"
+  = link_to 'Back', admin_news_index_path

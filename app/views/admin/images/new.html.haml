@@ -1,0 +1,56 @@
+.admin_item
+  %h1 New image
+  = form_for([:admin, @image], :html => {:multipart => true}) do |f|
+
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+    %p
+      = f.label :author_name
+      %br/
+      = f.autocomplete_field :author_name, autocomplete_author_name_admin_textuals_path
+    = f.hidden_field :user_id, {:value => current_user.id}
+    %p
+      = f.label :category
+      %br/
+      = f.collection_select :category_id, Category.find(:all), :id, :name
+    %p
+      = f.label :thumbnail
+      - unless f.object.thumbnail.blank?
+        = image_tag f.object.thumbnail.url(:thumb)
+      %br/
+      = f.file_field :thumbnail
+    %p
+      = f.label "short_description - keep to 500 words"
+      %br/
+      = f.text_area :short_description
+    %hr{:width => "40%"}
+      %p
+        = f.label :image1
+        %br/
+        = f.file_field :image1
+      %p
+        = f.label :image2
+        %br/
+        = f.file_field :image2
+      %p
+        = f.label :image3
+        %br/
+        = f.file_field :image3
+      %p
+        = f.label :image4
+        %br/
+        = f.file_field :image4
+      %p
+        = f.label :image5
+        %br/
+        = f.file_field :image5
+      %p
+        Tags (separate by commas):
+        %br/
+        = f.text_field :tag_list
+      %p
+        = f.submit "Create"
+  .admin_info
+    = link_to 'Back', admin_images_path

@@ -1,0 +1,12 @@
+%p
+  %b Name:
+  = h @author.name
+%p
+  %b Description:
+  = h @author.description
+%p
+  %b Website:
+  = h @author.website
+= link_to 'Edit', edit_admin_author_path(@author)
+|
+\#{link_to 'Back', admin_authors_path}

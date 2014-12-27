@@ -1,0 +1,27 @@
+%p
+  %b Title:
+  = h @image.title
+%p
+  %b User:
+  = h @image.user
+%p
+  %b Category:
+  = h @image.category
+%p
+  %b Image1:
+  = h @image.image1
+%p
+  %b Image2:
+  = h @image.image2
+%p
+  %b Image3:
+  = h @image.image3
+%p
+  %b Image4:
+  = h @image.image4
+%p
+  %b Image5:
+  = h @image.image5
+= link_to 'Edit', edit_image_path(@image)
+|
+\#{link_to 'Back', images_path}

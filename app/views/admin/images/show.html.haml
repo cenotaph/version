@@ -1,0 +1,27 @@
+%p
+  %b Title:
+  = h @image.title
+%p
+  %b User:
+  = h @image.user.realname
+%p
+  %b Category:
+  = h @image.category.name
+%p
+  %b Image1:
+  = image_tag @image.image1.url(:thumb)
+%p
+  %b Image2:
+  = image_tag  @image.image2.url(:thumb)
+%p
+  %b Image3:
+  = image_tag  @image.image3.url(:thumb)
+%p
+  %b Image4:
+  = image_tag  @image.image4.url(:thumb)
+%p
+  %b Image5:
+  = image_tag  @image.image5.url(:thumb)
+= link_to 'Edit', edit_admin_image_path(@image)
+|
+\#{link_to 'Back', admin_images_path}

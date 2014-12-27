@@ -1,0 +1,19 @@
+%h1 Listing videos
+%table
+  %tr
+    %th Title
+    %th Author
+    %th User
+    %th Category
+    %th Location
+    %th Description
+  - for video in @videos
+    %tr
+      %td= h video.title
+      %td= h video.author.name
+      %td= h video.user.realname
+      %td= h video.category.name
+      %td= h video.location
+      %td= h video.description
+      %td= link_to 'Show', video
+%br/

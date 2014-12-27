@@ -1,0 +1,20 @@
+.admin_show
+  %p
+    %b Title:
+    = h @textual.title
+  %p
+    %b User:
+    = h @textual.user.realname
+  %p
+    %b Category:
+    = h @textual.category.name
+  %p
+    %b Content:
+    = raw @textual.content
+  %p
+    %b Tags (separate by commas):
+    %br/
+    = raw @textual.tag_list.collect{|x| link_to(x, {:controller => '/posts', :action => 'tags', :id => x})}.join(', ')
+  = link_to 'Edit', edit_admin_textual_path(@textual)
+  |
+  \#{link_to 'Back', admin_textuals_path}

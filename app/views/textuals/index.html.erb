@@ -1,0 +1,29 @@
+<h1>Listing textuals</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Category</th>
+    <th>Content</th>
+  </tr>
+
+<% for textual in @textuals %>
+  <tr>
+    <td><%=h textual.title %></td>
+    <td><%=h textual.user.realname %></td>
+    <td><%=h textual.category.name %></td>
+    <td><%=h textual.content %></td>
+    <td><%= link_to 'Show', textual %></td>
+   <% if  current_user %>
+    <td><%= link_to 'Edit', edit_admin_textual_path(textual) %></td>
+    <td><%= link_to 'Destroy', [:admin, textual], :confirm => 'Are you sure?', :method => :delete %></td>
+   <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+   <% if  current_user %>
+<%= link_to 'New textual', new_textual_path %>
+   <% end %>

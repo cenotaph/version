@@ -1,0 +1,27 @@
+.admin_list
+  %h1 sounds
+  %table{:cellspacing => "5"}
+    %tr
+      %th Title
+      %th Author
+      %th Category
+      %th Soundfile
+      %th Date
+      %Th
+        \&nbsp;
+    - for sound in @sounds
+      %tr
+        %td= h sound.title
+        %td= h sound.author.name
+        %td= h sound.category.name
+        %td
+          %p{:id => "#{sound.id.to_s}_sound"} You need flash installed.
+          :javascript
+            AudioPlayer.embed(" sound.id.to_s _sound", {soundFile: " url_for_file_column(sound, "soundfile") "});  
+        %td= h sound.created_at.strftime('%Y-%m-%d')
+        %td= link_to 'Show', sound
+        %td= link_to 'Edit', edit_admin_sound_path(sound)
+        %td= link_to 'Destroy', sound, :confirm => 'Are you sure?', :method => :delete
+  %br/
+  %span.admin_new
+    = link_to 'New sound', new_admin_sound_path

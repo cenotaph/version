@@ -1,0 +1,29 @@
+%p
+  %b Title:
+  = h @video.title
+%p
+  %b Author:
+  = h @video.author.name
+%p
+  %b User:
+  = h @video.user.realname
+%p
+  %b Category:
+  = h @video.category.name
+- vid = @video.location.scan(/\d+$/)
+%object{:height => "222", :width => "400"}
+  %param{:name => "allowfullscreen", :value => "true"}/
+  %param{:name => "allowscriptaccess", :value => "always"}/
+  %param{:name => "movie", :value => "http://vimeo.com/moogaloop.swf?clip_id=#{vid}&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"}/
+  %embed{:allowfullscreen => "true", :allowscriptaccess => "always", :height => "222", :src => "http://vimeo.com/moogaloop.swf?clip_id=#{vid}&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1", :type => "application/x-shockwave-flash", :width => "400"}
+%br/
+%a{:href => "#{@video.location}?pg=embed&amp;sec=#{vid}"} Palin Biden Silences
+from
+%a{:href => "http://vimeo.com/tinapple?pg=embed&amp;sec=#{vid}"} Tinapple
+on
+= succeed "." do
+  %a{:href => "http://vimeo.com?pg=embed&amp;sec=#{vid}"} Vimeo
+%p
+  %b Description:
+  = h @video.description
+= link_to 'Back', videos_path

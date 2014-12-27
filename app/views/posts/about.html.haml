@@ -1,0 +1,75 @@
+.version_wrapper
+  .left_column
+    %h2.about
+    %p
+      %em Version
+      is an online journal for short-form writing and media work.  It presents scenes, incidents, encounters, and sensory experiences drawn from everyday life, in which concepts are not only elaborated but enacted.
+    %p
+      %em Version
+      works in close-up, cultivating moods, atmospheres, and various forms of bodily apprehension and awareness.  It aims for a quality of intimacy, presence, and affective charge:  a material openness to unexpected forms of encounter.  At the same time, it works laterally, conducting transversal operations across object-boundaries, attuned to the rhythms, flows, and layered ecologies that constitute the phenomenal world.
+    %p
+      Each
+      %em Version
+      editorial item adheres to the following formal constraint:  a maximum of 500 words, 5 images, or 50 seconds.
+    %p
+      With its formal and rhetorical approach,
+      %em Version
+      embodies new patterns of readership and network-enabled economies of attention, which can involve time-constrained multitasking and transversal readings across media venues.  It spans specialized discourses, genre categories, and disciplinary divides, while encouraging the reception, rearrangement and redistribution of its material in new social networks and assemblages.  It is less a bounded publication than an editorial ecology -- a dynamic system through which unexpected editorial properties and forms can emerge.
+    %ul.context_about
+      %li
+        %a{:href => "http://version.us1.list-manage.com/subscribe?u=8b58079f5c844965bb0a51e3e&id=9a07221dbe", :target => "_blank", :title => "Sign up for our email list"}
+          %img{:src => "/images/mail.png", :width => "32px;"}/
+      %li
+        %a{:href => "http://version.org/feed", :target => "_blank", :title => "Subscribe via RSS"}
+          %img{:src => "/images/rss.png"}/
+      %li
+        %a{:href => "http://www.facebook.com/group.php?gid=56842966943", :target => "_blank", :title => "Join our Facebook group"}
+          %img{:src => "/images/facebook.png"}/
+      %li
+        %a{:href => "https://twitter.com/version_journal", :target => "_blank", :title => "Follow us on Twitter"}
+          %img{:src => "/images/twitter.png"}/
+    %p{:style => "border-bottom: 1px solid #EAEAEA; width: 620px; padding: 0px 20px 20px 0px; margin-bottom:20px;"}
+      %em Version
+      is produced by the Visual Arts Department, University of California, San Diego; the UCSD Division of Arts and Humanities; the California Institute for Telecommunications and Information Technology (CAL-IT2); and the Software Studies Initiative.
+    %p{:style => "border-bottom: 1px solid #EAEAEA; width: 620px; padding: 0px 20px 20px 0px; margin-bottom:20px;"}
+      %span.job Editors
+      %br
+        %span.person>
+          %a{:href => "http://www.jordancrandall.com/", :target => "_blank"} Jordan Crandall
+        ,
+        %span.person
+          %a{:href => "http://calebwaldorf.net", :target => "_blank"} Caleb Waldorf
+        %br
+          %br
+            %span.job Managing Editor
+            %br
+              %span.person Tara Zepel
+              %br
+                %br
+                  %span.job Contributing Editors
+                  %br
+                    %span.person
+                      %a{:href => "http://www.zachblas.info/", :target => "_blank"}> Zach Blas
+                      ,
+                      = succeed "," do
+                        %a{:href => "http://transreal.org", :target => "_blank"} Micha Cárdenas
+                      %a{:href => "http://elleelleelle.org/", :target => "_blank"} Elle Mehrmand
+                    %br
+                      %br
+                        %span.job Website Design &amp; Development
+                        %br
+                          %span.person
+                            %a{:href => "http://calebwaldorf.net", :target => "_blank"} Caleb Waldorf
+                          \&amp;
+                          %span.person
+                            %a{:href => "http://www.icewhistle.com/", :target => "_blank"} John W. Pattenden-Fail
+                          %br
+                            %br
+                              %span.job Founding Editor
+                              %br
+                                %span.person
+                                  %a{:href => "http://www.jordancrandall.com/", :target => "_blank"} Jordan Crandall
+    %p{:style => "border-bottom: 1px solid #EAEAEA; width: 620px; padding: 0px 20px 20px 0px; margin-bottom:0px;font-size:11px; color:#666666;"} Additional support provided by the UCSD Center for the Humanities; the University of California Institute for Research in the Arts (UCIRA); the Center for Research in Computing and the Arts (CRCA); and the University of California Digital Arts Research Network (UC DARnet).
+  .right_column
+    - @posts.each_index do |p|
+      = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p], :side => ''}

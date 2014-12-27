@@ -1,0 +1,24 @@
+.admin_list
+  - if @videos.empty?
+    No videoes yet.
+  - else
+    %h1 videos
+    %table{:cellspacing => "5"}
+      %tr
+        %th Title
+        %th Author
+        %th Category
+        %th Date
+      - @videos.each do |video|
+        %tr
+          %td= h video.title
+          %td= h video.author.name
+          %td= h video.user.realname
+          %td= h video.category.name
+          %td= h video.created_at.strftime('%Y-%m-%d')
+          %td= link_to 'Show', video
+          %td= link_to 'Edit', edit_admin_video_path(video)
+          %td= link_to 'Destroy', [:admin, video], :confirm => 'Are you sure?', :method => :delete
+  %br/
+  %span.admin_new
+    = link_to 'New video', new_admin_video_path

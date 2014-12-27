@@ -1,0 +1,24 @@
+.version_wrapper
+  .left_column
+    .contributors
+      %h2
+      - @contributors.each do |cont|
+        %h5= cont.name
+        %p= raw cont.description
+        %a.external{:href => cont.website, :target => "_blank"} Website
+        .title
+          - items = cont.videos + cont.images + cont.textuals + cont.sounds
+          - items.each do |item|
+            %h7 contribution:
+            %ul
+              %a{:href => "/#{item.class.to_s.downcase}s/#{item.friendly_id}"}
+                %li= item.category.name
+                %li
+                  \.#{item.title}
+                %li
+                  \.#{item.created_at.strftime("%m%d%Y")}
+            %br/
+        %br{:clear => "all"}
+  .right_column
+    - @posts.each_index do |p|
+      = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p], :side => ''}

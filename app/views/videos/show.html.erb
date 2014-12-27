@@ -1,0 +1,30 @@
+<p>
+  <b>Title:</b>
+  <%=h @video.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @video.author.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @video.user.realname %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @video.category.name %>
+</p>
+
+<% vid = @video.location.scan(/\d+$/) %>
+
+
+<object width="400" height="222">	<param name="allowfullscreen" value="true" />	<param name="allowscriptaccess" value="always" />	<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=<%= vid %>&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" />	<embed src="http://vimeo.com/moogaloop.swf?clip_id=<%= vid %>&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="222"></embed></object><br /><a href="<%= @video.location %>?pg=embed&amp;sec=<%= vid %>">Palin Biden Silences</a> from <a href="http://vimeo.com/tinapple?pg=embed&amp;sec=<%= vid %>">Tinapple</a> on <a href="http://vimeo.com?pg=embed&amp;sec=<%= vid %>">Vimeo</a>.
+<p>
+  <b>Description:</b>
+  <%=h @video.description %>
+</p>
+
+<%= link_to 'Back', videos_path %>

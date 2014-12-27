@@ -1,0 +1,24 @@
+.version_module_closed{id: position}
+  .top
+    .logo
+  = link_to(item.post, {remote: true, class: :module, rel: position}) do
+    .content
+      .title
+        %ul
+          %li= item.category.name
+          %li
+            \.
+          
+            - unless item.author.blank?
+              = item.author.name
+          %li
+            \.
+            = item.title 
+            -#,  polymorphic_url(item, :routing_type => :path, :position => position), :remote => true, :id => item.class.to_s + "_#{item.id}"
+
+
+          %li
+            \.#{item.created_at.strftime("%m%d%y")}
+      .bottom
+        = image_tag item.thumbnail.url(:thumb)
+        .short_description= raw item.short_description

@@ -1,0 +1,61 @@
+/**
+ * slideshow.css
+ * Released with Slideshow 1.5.2 / May 2008
+ * 
+ * Defines styles for the Slideshow pause message
+ * and the Slideshow title bar.
+ */
+
+div#slideshow-title {
+	
+	/* appearance */
+	background: rgb(0, 0, 0);
+	opacity: 0.7;
+	*filter: alpha(opacity=70);
+	
+	/* positioning */
+	width: 100%;
+	height: 15px;
+	bottom: 0;
+	left: 0;
+	padding: 4px 0 4px 0;
+	
+	/* text style */
+	color: rgb(255, 255, 255);
+	text-align: right;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Tahoma, Arial, Sans-serif;
+
+}
+
+	div#slideshow-title span {
+		margin-right: 10px;
+	}
+
+div#slideshow-pause {
+	
+	/* appearance */
+	background: rgb(0, 0, 0);
+	padding: 4px;
+	border-left: 1px outset rgb(0, 0, 0);
+	border-right: 1px outset rgb(0, 0, 0);
+	border-bottom: 1px outset rgb(0, 0, 0);
+	
+	/* text style */
+	color: rgb(255, 255, 255);
+	font-variant: small-caps;
+	font-size: 11px;
+	font-family: Tahoma, Arial, Sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+#slideshow-container {
+	margin-top: 10px;
+}
+
+#slideshow-container img {
+	margin-left:0px;
+	margin-bottom: 0px;
+}

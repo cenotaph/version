@@ -1,0 +1,5 @@
+if ($('#overlay').css('display') == 'none') {
+  openModule(<%= @position %>);
+}
+$('#overlay').fadeIn();
+$('#ajaxtarget').html("<%= escape_javascript(render :partial => 'layouts/om', :locals => {:item => @item}) %>");
