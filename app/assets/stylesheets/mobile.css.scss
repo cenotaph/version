@@ -1,0 +1,124 @@
+@media only screen and (max-width : 419px) {
+  
+  .version_module_closed_wrapper {
+    float: none;  
+
+    .version_module_closed {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+  }
+  
+  #overlay {
+    position: absolute;
+    left: 10px;
+    width: 360px;
+    background-image: none;
+  }
+  .version_module_expanded_wrapper { 
+    width: 360px;
+  }
+  
+  .version_module_expanded {
+    width: 360px;
+
+
+    background-image: url("/images/expanded_bg_small.png");
+
+
+    .top_half {
+      background-color: #f6f6f7;
+      margin-left: 0;
+      .top {
+        width: 360px;
+        margin: 0px;
+      }
+      .content {
+        width: 360px;
+        margin-top: -60px;
+        padding: 20px;
+        .title {
+          width: 324px;
+          ul {
+            li {
+              float: none;
+            }
+          }
+        }
+      }
+    }
+    .bottom_half {
+      width: 360px;
+      background-color: #f6f6f7;
+      padding: 0px;
+      .text_entry, .keywords, .share {
+        width: 320px;
+      }
+
+    }
+  }
+}
+
+
+@media only screen and (min-width: 420px) and (max-width : 729px) {
+  
+  .version_module_closed_wrapper {
+    float: none;  
+
+    .version_module_closed {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+  }
+  
+  #overlay {
+    position: absolute;
+    left: 50% !important;
+    background-image: none;
+  }
+  .version_module_expanded {
+    width: 90%;
+    position: relative;
+    left: -50%;
+    background-image: url("/images/expanded_bottom.png");
+    background-repeat: no-repeat;
+  	background-position: bottom;
+
+    .top_half {
+      background-color: #f6f6f7;
+      .top {
+        width: 90px;
+      }
+      .content {
+        width: 90px;
+      }
+    }
+    .bottom_half {
+      width: 90%;
+      background-color: #f6f6f7;
+      .text_entry {
+        width: 90%;
+      }
+      
+    }
+  }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
+

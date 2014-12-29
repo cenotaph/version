@@ -15,4 +15,17 @@ class Post < ActiveRecord::Base
     item.category
   end
   
+  
+  def page_num(options = {})
+    column = options[:by] || :published_at
+    order  = options[:order] || :desc
+    per    = options[:per] || self.class.default_per_page
+    operator = (order == :asc ? "<=" : ">=")
+    
+    (self.class.where("#{column} #{operator} ?", read_attribute(column)).order("#{column} #{order}").count.to_f / per).ceil
+  end
+  
+  def permalink
+    "/#{item.category.slug}/#{slug}"
+  end
 end

@@ -40,6 +40,7 @@ gem 'figaro'
 gem "friendly_id", branch: :master, github: 'norman/friendly_id'
 gem 'haml'
 #gem 'haml-rails', :group => :development
+
 gem 'kaminari'
 gem 'meta-tags', require: 'meta_tags'
 gem 'mini_magick'

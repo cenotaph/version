@@ -1,29 +1,47 @@
 .version_wrapper
-  -#= render :partial => 'layouts/categoryfilter'
+  = render :partial => 'layouts/categoryfilter'
 .version_module_closed_wrapper
   - @posts.each_with_index do |mod, i|
-    -#
-    = render :partial => 'layouts/component', :locals => {:position => i, :item  => mod.item, :side => i.to_s}
-#overlay.version_module_expanded_wrapper{:style => "display:none;"}
+    = render :partial => 'layouts/component', :locals => {:position => i, :item  => mod.item, :side => i.to_s, :ajax => true}
+#overlay.version_module_expanded_wrapper{:style =>  "display:none;"}
   #ajaxtarget.version_module_expanded
 
 = paginate @posts
 
 = content_for :jquery do
   :plain
+    
+    removeHash();
+    
+
+
+    
     $('a.module').on('ajax:success', function(event, data, status, xhr) {
+      // remove existing opened class
+      $('.version_module_closed.opened').removeClass('opened'); 
+      $(this).parent('.version_module_closed').addClass('opened');
       var destination = $(this).parent('.version_module_closed').offset();
+     
       $("#ajaxtarget").html(xhr.responseText);
-      
+      $('.slick-carousel').slick({autoplay: true});
       // check if right side will be offscreen
       // var rightborder = $('body').offset().left + 1050;
       
-      $("#overlay").css({top: destination.top, left: destination.left - $('body').offset().left - 10 });
+      $('.top_half .top .close').on('click', function() {
+        $('#overlay').fadeOut();
+        $('.version_module_closed.opened').removeClass('opened');
+        $.when(remove_permalink()).done(function() {
+          removeHash();
+        });
+        removeHash();
+      });
       
-      $("#overlay").fadeIn();
-      if ($('#overlay').is(':off-right')) {
-        $("#overlay").css({top: destination.top, left: destination.left - $('body').offset().left - 350 });
-      }
+      check_overlay(destination);
       scrollTo('#overlay');
+      fix_url($(this).attr('rel'), $(this).attr('href'));
+      removeHash();
+      
     });
-  
+
+
+      

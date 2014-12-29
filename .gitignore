@@ -43,3 +43,5 @@ config/database.yml
 *.rails2
 config/application.yml
 
+.keep
+bin

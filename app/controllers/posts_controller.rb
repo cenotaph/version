@@ -3,8 +3,8 @@ class PostsController < ApplicationController
  
   
   def about
-    preload
-    @posts = @posts[0..2]
+    @posts = Post.order(published_at: :desc).page(params[:page]).per(3)
+    set_meta_tags title: 'about'
   end
   
   def author
@@ -14,13 +14,10 @@ class PostsController < ApplicationController
   end
   
   def cat 
-    # 
-    # filter by category type
-    #
-    preload
     @id = params[:id]
     cat = Category.find(@id)
-    @posts =  Kaminari.paginate_array(cat.posts.sort_by{|x| x.created_at }.reverse).page(params[:page]).per(9)
+    @posts =  Kaminari.paginate_array(cat.posts.sort_by{|x| x.published_at }.reverse).page(params[:page]).per(12)
+    
     render :template => 'posts/index'
   end
 
@@ -35,10 +32,9 @@ class PostsController < ApplicationController
   end
   
   def contributors
-    preload
-    @posts = @posts[0..2]
-   # @contributors = Author.paginate :per_page => 6, :page => params[:page], :order => 'created_at DESC'
-   @contributors = Author.find(:all, :order => 'created_at DESC')
+    @posts = Post.order(published_at: :desc).page(params[:page]).per(3)
+    set_meta_tags title: 'contributors'
+   @contributors = Author.all.order(created_at: :desc)
   end
   
   def send_item_email
@@ -53,7 +49,7 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.order(published_at: :desc).page(params[:page]).per(9)
+    @posts = Post.order(published_at: :desc).page(params[:page]).per(12)
   end
   
   def landing
@@ -63,16 +59,28 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id])
-    if request.xhr?
-      render :layout => false
+    
+    if params[:page]
+      redirect_to posts_path(:page => params[:page])
+    else
+      @post = Post.find(params[:id])
+      posts = Post.order(published_at: :desc).page(1)
+      page_number =  @post.page_num
+      @posts = Post.order(published_at: :desc).page(@post.page_num)
+
+      set_meta_tags title: 'content'
+      if request.xhr?
+        render :layout => false
+      else
+        render template: 'posts/permalink'
+      end
     end
   end
   
   def tag
-    @categories = Category.find(:all, :order => 'name')
-    @tags = Tag.find(:all).sort{|x,y| y.taggings.count <=> x.taggings.count }
-    @posts =  Kaminari.paginate_array(Tag.find_by_name(params[:id]).taggings.map{|x| x.taggable}).page(params[:page]).per(6)
+    @categories = Category.all.order(:name)
+    @tags = Tag.all.sort_by{|x| x.taggings.count }
+    @posts =  Kaminari.paginate_array(Tag.find_by(:name => params[:id]).taggings.map{|x| x.taggable.post }).page(params[:page]).per(12)
 
     render :template => 'posts/index'
   end

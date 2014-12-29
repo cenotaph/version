@@ -21,4 +21,4 @@
         %br{:clear => "all"}
   .right_column
     - @posts.each_index do |p|
-      = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p], :side => ''}
+      = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p].item, :side => '', :ajax => false}

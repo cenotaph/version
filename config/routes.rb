@@ -30,7 +30,8 @@ Version::Application.routes.draw do
       end
       resources :news
   end
-
+  
+  match '/:category_name/:id', to: 'posts#show', via: :get
   match '/' => 'posts#index', via: :get
   match '/feed' => 'posts#index', :as => :feed, :format => 'rss', via: :get
   match '/about' => 'posts#about', :as => :about, via: :get

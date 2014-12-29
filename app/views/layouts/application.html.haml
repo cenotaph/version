@@ -1,31 +1,19 @@
 !!!
 %html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
     %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
-    %META{:CONTENT => "Version is a cultural journal of experiential scenes and intensive encounters. It encourages performative forms of engagement that, working allegorically, can span specialized discourses, genre categories, and disciplinary divides.", :NAME => "Description"}
-      %META{:CONTENT => "version, journal, version journal, cultural journal, online journal, art journal, media journal, media, art, writing, video, sound, encounters, performance, performative, discourse, jordan crandall, caleb waldorf", :NAME => "keywords"}
-        %title
-          v.
-          - if controller.action_name == 'landing'
-            home
-          - elsif controller.controller_name == 'news'
-            news
-          - elsif controller.action_name == 'show' || controller.action_name == 'index'
-            content
-          - else
-            = controller.action_name
-        = stylesheet_link_tag :application
-        = javascript_include_tag 'ufo'
-        = javascript_include_tag :application
-        = stylesheet_link_tag 'slideshow'
-        - if request.fullpath =~ /^\/admin/
-          = stylesheet_link_tag 'cms' 
-          = javascript_include_tag "autocomplete-rails.js"
-          = javascript_include_tag 'use_tinymce_init' 
-        %link{:href => "/stylesheets/print.css", :media => "print", :rel => "stylesheet", :type => "text/css"}/
-        = javascript_include_tag 'audio-player'
-        :javascript
-          AudioPlayer.setup("/player.swf", {  
+    = display_meta_tags :site => 'v.', separator: ' ', description:  "Version is a cultural journal of experiential scenes and intensive encounters. It encourages performative forms of engagement that, working allegorically, can span specialized discourses, genre categories, and disciplinary divides.", keywords:  "version, journal, version journal, cultural journal, online journal, art journal, media journal, media, art, writing, video, sound, encounters, performance, performative, discourse, jordan crandall, caleb waldorf"
+
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+    - if request.fullpath =~ /^\/admin/
+      = stylesheet_link_tag 'cms' 
+      = javascript_include_tag 'use_tinymce_init' 
+    %link{:href => "/stylesheets/print.css", :media => "print", :rel => "stylesheet", :type => "text/css"}/
+    = javascript_include_tag 'audio-player'
+    :javascript
+      AudioPlayer.setup("/player.swf", {  
             width: 600,  
             initialvolume: 100,  
             transparentpagebg: "yes",  
@@ -40,9 +28,11 @@
             loader:"AD2026",
             autostart: "yes",
             noinfo: "yes",
-            });  
-        %link{:href => "http://www.version.org/feed/", :rel => "alternate", :title => " - RSS", :type => "application/rss+xml"}/
-        = javascript_include_tag 'slideshow'
+        });
+            
+  
+    %link{:href => "http://www.version.org/feed/", :rel => "alternate", :title => " - RSS", :type => "application/rss+xml"}/
+    
   %body
     - if flash[:notice]
       %p{:style => "color: #cccccc; font-size:14px; font-weight:bold; padding-bottom:40px;"}= flash[:notice]
@@ -77,5 +67,6 @@
       ga('create', 'UA-7515501-1', 'auto');
       ga('send', 'pageview');
       $(document).ready(function() {
+        resize_wrapper();
         #{yield :jquery}
       });

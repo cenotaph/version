@@ -1,7 +1,7 @@
-.version_module_closed{id: position}
+.version_module_closed{id: "module_#{position}"}
   .top
     .logo
-  = link_to(item.post, {remote: true, class: :module, rel: position}) do
+  = link_to(item.post.permalink, {remote: ajax, class: :module, rel: position}) do
     .content
       .title
         %ul

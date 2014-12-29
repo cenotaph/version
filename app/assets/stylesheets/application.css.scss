@@ -1,7 +1,10 @@
 /*
  *= require_self
- 
+ *= require mobile
+ *= require slick
+ *= require media
 */
+
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, address, th, td {
 margin: 0px;
@@ -14,7 +17,7 @@ body {
 	font-size: 11px;
 	line-height: 16px;
 	color:#666666; 
-	width: 1050px;
+//  width: 1050px;
 	margin-bottom: 0px;
 	position: relative;
 	margin: 0 auto;
@@ -30,9 +33,9 @@ a:hover {
 	}
 
 .version_wrapper {
-width: 1050;
+
 height: auto;
-margin: 0px;
+margin: 0 auto;
 padding-bottom:0px;
 }
 
@@ -431,9 +434,9 @@ padding-bottom:20px;
 /******V.header*****/
 
 .version_header {
-width: 980px;
+
 height: 100px;
-margin: -11px 0px 0px 20px;
+margin: -11px auto 0px auto;
 }
 
 .version_header .logo {
@@ -596,7 +599,7 @@ overflow: visible;
 /******Detail Page*****/
 
 .version_wrapper .left_column {
-width: 640px;
+
 margin: 0px 0px 0px 20px;
 *margin: 10px 0px 0px 20px;
 padding: 0px;
@@ -608,7 +611,7 @@ min-height: 1065px;
 .version_wrapper .right_column {
 width: 300px;
 margin: 0px;
-padding: 20px 0px 0px 20px;
+//padding: 20px 0px 0px 20px;
 float: left;
 }
 
@@ -743,9 +746,10 @@ padding-right: 15px;
 
 .version_wrapper .contributors .title {
 	float: left;
-	padding: 20px 20px 20px 0px;
+  width: 100%;
+	padding: 20px 0px 20px 0px;
 	margin:0px 0px 0px 0px;
-	width: 620px;
+
 	border-bottom: 1px solid #EAEAEA;
 	}
 
@@ -917,12 +921,12 @@ text-decoration: none;
 background-image: url('/images/catfilter_bg.png');
 background-repeat: repeat-x;
 background-position: top;
-width: 970px;
+width: inherit;
 height: auto;
 float: left;
-margin: 0px 0px 0px 20px;
-*margin: 11px 0px 0px 20px;
-padding: 5px 5px 0px 5px;
+//margin: 0px 0px 0px 20px;
+//*margin: 11px 0px 0px 20px;
+//padding: 5px 5px 0px 5px;
 border-bottom: 1px solid #eaeaea;
 float: left;
 position: relative;
@@ -966,7 +970,10 @@ float: left;
 	margin: 0px;
 	height: 15px;
 	border-right: 1px solid #cccccc;
-	}
+  &.active {
+    a { color: #666; }
+  }
+}
 	
 .version_wrapper .category_filter .keywords {
 float: right;
@@ -1050,16 +1057,16 @@ margin:4px 0px 0px 5px;
 
 .version_wrapper .category_filter .dropdown {
 float:left;
-width: 980px;
+
 height: auto;
 background-color: #f5f5f5;
 position: relative;
 
-margin:5px 0px 0px -895px;
+
 }
 
 .version_wrapper .category_filter .dropdown .list {
-width: 970px;
+
 margin:5px;
 *margin:5px 5px 10px 5px;
 background-color: #ffffff;
@@ -1277,8 +1284,8 @@ color: #999999;
 }
 
 .version_module_closed_wrapper {
-float:left;
-*width:1020px;
+  float: none;
+  margin: 0 auto;
 }
 
 .admin_list table {
@@ -1305,19 +1312,4 @@ ul.context_about li a {border: none;}
 
 ul.context_about li a img {border: none;}
 
-ul.slideshow {
-  list-style: none;
-  width: 600px;
-  height: 450px;
-  overflow: hidden;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-ul.slideshow li {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
 

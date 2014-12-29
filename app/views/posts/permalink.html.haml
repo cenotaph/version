@@ -1,0 +1,67 @@
+.version_wrapper
+  = render :partial => 'layouts/categoryfilter'
+.version_module_closed_wrapper
+  - @posts.each_with_index do |mod, i|
+    - if mod == @post
+      .version_module_closed.opened{id: "module_#{i}"}
+        .top
+          .logo
+        = link_to(mod.item.post, {remote: true, class: :module, rel: i}) do
+          .content
+            .title
+              %ul
+                %li= mod.item.category.name
+                %li
+                  \.
+          
+                  - unless mod.item.author.blank?
+                    = mod.item.author.name
+                %li
+                  \.
+                  = mod.item.title 
+                %li
+                  \.#{mod.item.created_at.strftime("%m%d%y")}
+            .bottom
+              = image_tag mod.item.thumbnail.url(:thumb)
+              .short_description= raw mod.item.short_description
+    - else
+      = render :partial => 'layouts/component', :locals => {:position => i, :item  => mod.item, :side => i.to_s, :ajax => true}
+
+#overlay.version_module_expanded_wrapper{:style => "display: block;"}
+  #ajaxtarget.version_module_expanded= render partial: 'show', locals: {post: @post}
+
+= paginate @posts, { url: posts_path } # controller: :posts, id: nil, action: :index }
+
+= content_for :jquery do
+  :plain
+      
+    // scroll to item
+    removeHash();
+    scrollTo('#overlay');
+    removeHash();
+    $('.top_half .top .close').on('click', function() {
+      $('#overlay').fadeOut();
+      $('.version_module_closed.opened').removeClass('opened');
+      $.when(remove_permalink()).done(function() {
+        removeHash();
+      });
+      removeHash();
+    });
+
+    
+    $('a.module').on('ajax:success', function(event, data, status, xhr) {
+      // remove existing opened class
+      $('.version_module_closed.opened').removeClass('opened'); 
+      $(this).parent('.version_module_closed').addClass('opened');
+      var destination = $(this).parent('.version_module_closed').offset();
+     
+      $("#ajaxtarget").html(xhr.responseText);
+      $('.slick-carousel').slick({autoplay: true});
+
+
+      
+      check_overlay(destination);
+      scrollTo('#overlay');
+      fix_url($(this).attr('rel'), $(this).attr('href'));
+      removeHash();
+    });
