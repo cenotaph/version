@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+  before_action :set_url, only: [:show, :edit, :update, :destroy]
  
   
   def about
@@ -50,6 +50,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.order(published_at: :desc).page(params[:page]).per(12)
+    @nofilters = true
   end
   
   def landing
@@ -84,4 +85,12 @@ class PostsController < ApplicationController
 
     render :template => 'posts/index'
   end
+  
+  private
+
+  def set_url
+    @post = Post.friendly.find(params[:id])
+    redirect_to "/#{@post.category.name}/#{@post.friendly_id}",  status: 301 unless @post.friendly_id == params[:id]
+  end
+  
 end

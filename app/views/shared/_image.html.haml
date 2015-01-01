@@ -14,10 +14,10 @@
     .slide= image_tag item.image4.url(:slide)
     .slide= image_tag item.image5.url(:slide)
 
-  - unless @sslaunch.blank?
-    = @sslaunch
-  %br/
-  %br/
+
   - if current_user
     = link_to '[edit]', edit_admin_image_path(item)
 
+= content_for :jquery do
+  :plain
+    $('.slick-carousel').slick({autoplay: true});

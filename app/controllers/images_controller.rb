@@ -17,8 +17,8 @@ class ImagesController < ApplicationController
       render :partial => 'layouts/om', :locals => {:@item => @item, :@sslaunch => @sslaunch}
   end
 
-  # GET /images/1
-  # GET /images/1.xml
+  # GET /assets/1
+  # GET /assets/1.xml
   def show
     preload
     @item = Image.find(params[:id])

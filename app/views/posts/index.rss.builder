@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
 
     for article in @posts
       if article.thumbnail.url(:thumb).blank?
-        description = image_tag '/images/missing_thumb.png'
+        description = image_tag '/assets/missing_thumb.png'
       else
         description = image_tag article.thumbnail.url(:thumb) 
       end

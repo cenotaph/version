@@ -10,8 +10,8 @@ class Admin::ImagesController < ApplicationController
       end
     end
 
-    # GET /images/1
-    # GET /images/1.xml
+    # GET /assets/1
+    # GET /assets/1.xml
     def show
       @image = Image.find(params[:id])
 
@@ -21,8 +21,8 @@ class Admin::ImagesController < ApplicationController
       end
     end
 
-    # GET /images/new
-    # GET /images/new.xml
+    # GET /assets/new
+    # GET /assets/new.xml
     def new
       @image = Image.new
 
@@ -32,7 +32,7 @@ class Admin::ImagesController < ApplicationController
       end
     end
 
-    # GET /images/1/edit
+    # GET /assets/1/edit
     def edit
       @image = Image.find(params[:id])
     end
@@ -57,8 +57,8 @@ class Admin::ImagesController < ApplicationController
       end
     end
 
-    # PUT /images/1
-    # PUT /images/1.xml
+    # PUT /assets/1
+    # PUT /assets/1.xml
     def update
       @image = Image.find(params[:id])
       unless params[:image][:tags].nil?
@@ -77,8 +77,8 @@ class Admin::ImagesController < ApplicationController
       end
     end
 
-    # DELETE /images/1
-    # DELETE /images/1.xml
+    # DELETE /assets/1
+    # DELETE /assets/1.xml
     def destroy
       @image = Image.find(params[:id])
       @image.destroy

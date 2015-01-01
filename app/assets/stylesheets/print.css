@@ -89,7 +89,7 @@ font-size: 12px;
 .version_header .logo {
   display: none;
   float: left;
-  background-image: url('/images/header_vlogo.png');
+  background-image: url('/assets/header_vlogo.png');
   background-repeat: no-repeat;
   width: 52px;
   height: 50px;

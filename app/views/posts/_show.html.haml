@@ -3,10 +3,10 @@
     .logo
     .close
       %a{:href => "#"}
-        %img{:src => "/images/close.png"}/
+        = image_tag 'close.png'
   .content
     .title
-      %img#printlogo{:align => "left", :src => "/images/header_vlogo.png"}
+      %img#printlogo{:align => "left", :src => "/assets/header_vlogo.png"}
         %ul
           %li
             - unless post.item.category.blank?
@@ -34,23 +34,23 @@
     %ul
       %li
         %a{:href => "javascript:location.href='http://www.facebook.com/sharer.php?u='+escape('http://www.version.org/#{post.item.class.to_s.downcase}s/#{post.item.id}')+'&t='+escape('#{post.item.title}:#{post.item.slug}')"}
-          %img{:src => "/images/logos/share/facebook.png", :target => "_blank", :title => "Click to post this to Facebook"} facebook
+          %img{:src => "/assets/logos/share/facebook.png", :target => "_blank", :title => "Click to post this to Facebook"} facebook
       %li
         %a{:href => "http://twitter.com/home?status=Currently reading: http://www.version.org/#{post.item.class.to_s.downcase}s/#{post.item.id}&title='#{post.item.title}", :target => "_blank", :title => "Click to post this to Twitter"}
-          = image_tag '/images/logos/share/twitter.png'
+          = image_tag '/assets/logos/share/twitter.png'
           twitter
       %li
         %a{:href => "http://del.icio.us/post?url=http://www.version.org/#{post.item.class.to_s.downcase}s/#{post.item.id}&title='#{post.item.title}'"}
-          = image_tag '/images/logos/share/delicious.png'
+          = image_tag '/assets/logos/share/delicious.png'
           del.icio.us
       %li{:onclick => "Effect.Appear('emailpopup')"}
-        %img{:src => "/images/logos/share/mail.png"} email
+        %img{:src => "/assets/logos/share/mail.png"} email
       %li
         %a{:href => "#", :onclick => "window.print();return false;"}
-          %img{:src => "/images/logos/share/print.png"} print
+          %img{:src => "/assets/logos/share/print.png"} print
       %li
         = link_to @post.permalink do
-          = image_tag('/images/logos/share/direct_link.png')
+          = image_tag('/assets/logos/share/direct_link.png')
           direct link
   #emailpopup.email{:style => "float: right; display: none"}
     = render :partial => 'layouts/email'

@@ -71,13 +71,13 @@ border-bottom: 1px solid #999999;
 	padding: 0px;
 	margin: 0px;
 	background-color: #f6f6f7;
-	background-image: url('/images/module_gradient_top.png');
+	background-image: url('/assets/module_gradient_top.png');
 	background-repeat: repeat-x;
 	}
 	
 	
 .version_module_closed .top .logo {
-	background-image: url('/images/v.png');
+	background-image: url('/assets/v.png');
 	background-position-x: 10px;
 	background-position-y: 10px;
 	width: 33px;
@@ -164,7 +164,7 @@ border-bottom: 1px solid #999999;
 	margin:0px 0px 0px 10px;
 	margin-left:0px;
 	background-color:none;
-	background-image: url('/images/expanded_bottom.png');
+	background-image: url('/assets/expanded_bottom.png');
 	background-position: bottom;
 	padding-bottom: 18px;
 	float: left;
@@ -174,7 +174,7 @@ border-bottom: 1px solid #999999;
 .version_module_expanded {
 	width: 658px;
 	float: left;
-	background-image: url('/images/expanded_bg.png');
+	background-image: url('/assets/expanded_bg.png');
 	background-position: center top;
 	background-repeat: repeat-y;
 	background-position-y: -18px;
@@ -201,14 +201,14 @@ border-bottom: 1px solid #999999;
 	margin:0px;
 	margin-left:9px;
 	background-color: #f6f6f7;
-	background-image: url('/images/module_gradient_top.png');
+	background-image: url('/assets/module_gradient_top.png');
 	background-repeat: repeat-x;
 	border-top: 1px solid #f7f7f7;
 	}
 	
 	
 .version_module_expanded .top .logo {
-	background-image: url('/images/v.png');
+	background-image: url('/assets/v.png');
 	background-position-x: 10px;
 	background-position-y: 10px;
 	width: 33px;
@@ -286,7 +286,7 @@ border-bottom: 1px solid #999999;
 
 .version_module_expanded .bottom_half .keywords h4 {
 	float: left;
-	background-image: url('/images/keywords.png');
+	background-image: url('/assets/keywords.png');
 	width: 67px;
 	height: 14px;
 	margin-top: 3px;
@@ -323,7 +323,7 @@ border-bottom: 1px solid #999999;
 
 .version_module_expanded .bottom_half .share h4 {
 	float: left;
-	background-image: url('/images/share.png');
+	background-image: url('/assets/share.png');
 	width: 41px;
 	height: 12px;
 	margin-top: 3px;
@@ -466,7 +466,7 @@ list-style: none;
 .version_header .navigation ul li.content {
 width:51px;
 height: 9px;
-background-image: url('/images/header_content.png');
+background-image: url('/assets/header_content.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: top;
@@ -478,7 +478,7 @@ padding-left:25px;
 .version_header .navigation ul li.about {
 width:37px;
 height: 9px;
-background-image: url('/images/header_about.png');
+background-image: url('/assets/header_about.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: top;
@@ -489,7 +489,7 @@ margin-top:20px;
 .version_header .navigation ul li.news {
 width:32px;
 height: 9px;
-background-image: url('/images/header_news.png');
+background-image: url('/assets/header_news.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: top;
@@ -500,7 +500,7 @@ padding-left:25px;
 .version_header .navigation ul li.contributors {
 width:85px;
 height: 9px;
-background-image: url('/images/header_contributors.png');
+background-image: url('/assets/header_contributors.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: top;
@@ -511,7 +511,7 @@ padding-left:25px;
 .version_header .navigation ul li.context {
 width:51px;
 height: 9px;
-background-image: url('/images/header_context.png');
+background-image: url('/assets/header_context.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: top;
@@ -522,7 +522,7 @@ padding-left:25px;
 .version_header .navigation ul li.subscribe {
 width:63px;
 height: 9px;
-background-image: url('/images/header_subscribe.png');
+background-image: url('/assets/header_subscribe.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: top;
@@ -534,7 +534,7 @@ padding-left:25px;
 .version_header .navigation ul li.content:hover {
 width:51px;
 height: 9px;
-background-image: url('/images/header_content.png');
+background-image: url('/assets/header_content.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: bottom;
@@ -543,7 +543,7 @@ background-position: bottom;
 .version_header .navigation ul li.about:hover {
 width:37px;
 height: 9px;
-background-image: url('/images/header_about.png');
+background-image: url('/assets/header_about.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: bottom;
@@ -552,7 +552,7 @@ background-position: bottom;
 .version_header .navigation ul li.news:hover {
 width:32px;
 height: 9px;
-background-image: url('/images/header_news.png');
+background-image: url('/assets/header_news.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: bottom;
@@ -561,7 +561,7 @@ background-position: bottom;
 .version_header .navigation ul li.contributors:hover {
 width:85px;
 height: 9px;
-background-image: url('/images/header_contributors.png');
+background-image: url('/assets/header_contributors.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: bottom;
@@ -570,7 +570,7 @@ background-position: bottom;
 .version_header .navigation ul li.context:hover {
 width:51px;
 height: 9px;
-background-image: url('/images/header_context.png');
+background-image: url('/assets/header_context.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: bottom;
@@ -579,7 +579,7 @@ background-position: bottom;
 .version_header .navigation ul li.subscribe:hover {
 width:63px;
 height: 9px;
-background-image: url('/images/header_subscribe.png');
+background-image: url('/assets/header_subscribe.png');
 background-repeat: no-repeat;
 cursor: pointer;
 background-position: bottom;
@@ -631,7 +631,7 @@ font-weight: normal;
 }
 
 .version_wrapper .left_column .about {
-background-image:url(/images/title_about.png);
+background-image:url(/assets/title_about.png);
 background-repeat:no-repeat;
 height:27px;
 width:123px;
@@ -644,7 +644,7 @@ margin-top:60px;
 }
 
 .version_wrapper .left_column .news h2 {
-background-image: url('/images/title_news.png');
+background-image: url('/assets/title_news.png');
 background-repeat: no-repeat;
 width:102px;
 height: 27px;
@@ -682,7 +682,7 @@ color: #333333;
 }
 
 .version_wrapper .right_column .latest {
-background-image: url('/images/title_latest.png');
+background-image: url('/assets/title_latest.png');
 background-repeat: no-repeat;
 width:95px;
 height: 29px;
@@ -705,7 +705,7 @@ color:#333333;
 }
 
 .version_wrapper .left_column .contributors h2{
-background-image:url('/images/title_contributors.png');
+background-image:url('/assets/title_contributors.png');
 background-repeat:no-repeat;
 height:27px;
 padding-bottom:0px;
@@ -731,7 +731,7 @@ font-size: 13px;
 font-weight: bold;
 float: left;
 display: inline;
-background: url('/images/external.png') no-repeat right center;
+background: url('/assets/external.png') no-repeat right center;
 padding-right: 15px;
 }
 
@@ -770,7 +770,7 @@ margin-top:60px;
 }
 
 .version_wrapper .left_column .context h2 {
-background-image: url('/images/title_context.png');
+background-image: url('/assets/title_context.png');
 background-repeat: no-repeat;
 width:166px;
 height: 27px;
@@ -800,7 +800,7 @@ margin-top:20px;
 }
 
 .version_wrapper .bottom_box {
-background-image: url('/images/landing_bottom_box.png');
+background-image: url('/assets/landing_bottom_box.png');
 background-repeat: repeat-x;
 width: 980px;
 height: 288px;
@@ -816,7 +816,7 @@ height: 356px;
 }
 
 .version_wrapper .bottom_box .news h2 {
-background-image: url('/images/landing_news.png');
+background-image: url('/assets/landing_news.png');
 background-repeat: no-repeat;
 width:92px;
 height: 21px;
@@ -909,7 +909,7 @@ text-decoration: none;
 
 
 .version_wrapper .category_filter {
-background-image: url('/images/catfilter_bg.png');
+background-image: url('/assets/catfilter_bg.png');
 background-repeat: repeat-x;
 background-position: top;
 width: 970px;
@@ -930,7 +930,7 @@ padding-bottom: 5px;
 }
 
 .version_wrapper .category_filter .categories h2 {
-background-image: url('/images/catfilter_categories.png');
+background-image: url('/assets/catfilter_categories.png');
 background-repeat: no-repeat;
 width:62px;
 height: 12px;
@@ -971,7 +971,7 @@ margin:10px 0px 0px 0px;
 }
 
 .version_wrapper .category_filter .keywords h2 {
-background-image: url('/images/catfilter_keywords.png');
+background-image: url('/assets/catfilter_keywords.png');
 background-repeat: no-repeat;
 width:52px;
 height: 13px;
@@ -981,7 +981,7 @@ float: left;
 
 
 .version_wrapper .category_filter .keywords a {
-background-image: url('/images/catfilter_keywords_downarrow.png');
+background-image: url('/assets/catfilter_keywords_downarrow.png');
 background-repeat: no-repeat;
 border: none;
 width:9px;
@@ -992,7 +992,7 @@ margin:4px 0px 0px 5px;
 }
 
 .version_wrapper .category_filter .keywords a:hover {
-background-image: url('/images/catfilter_keywords_downarrow.png');
+background-image: url('/assets/catfilter_keywords_downarrow.png');
 background-repeat: no-repeat;
 border: none;
 width:9px;
@@ -1012,7 +1012,7 @@ margin: 10px 0 0;
 }
 
 .version_wrapper .category_filter .keywords_down h2 {
-background-image: url('/images/catfilter_keywords.png');
+background-image: url('/assets/catfilter_keywords.png');
 background-repeat: no-repeat;
 width:52px;
 height: 13px;
@@ -1022,7 +1022,7 @@ float: left;
 
 
 .version_wrapper .category_filter .keywords_down a {
-background-image: url('/images/catfilter_keywords_downarrow.png');
+background-image: url('/assets/catfilter_keywords_downarrow.png');
 background-repeat: no-repeat;
 border: none;
 width:9px;
@@ -1033,7 +1033,7 @@ margin:4px 0px 0px 5px;
 }
 
 .version_wrapper .category_filter .keywords_down a:hover {
-background-image: url('/images/catfilter_keywords_downarrow.png');
+background-image: url('/assets/catfilter_keywords_downarrow.png');
 background-repeat: no-repeat;
 border: none;
 width:9px;
@@ -1097,7 +1097,7 @@ text-decoration: underline;
 /**********email pop-up***********/
 
 	.email {
-	background-image: url('/images/email_bg.png');
+	background-image: url('/assets/email_bg.png');
 	background-repeat: no-repeat;
 	width:257px;
 	height: 122px;
@@ -1124,7 +1124,7 @@ text-decoration: underline;
 	}
 	
 	.email .close {
-	background-image: url('/images/close.png');
+	background-image: url('/assets/close.png');
 	float:right;
 	width: 22px;
 	height: 22px;

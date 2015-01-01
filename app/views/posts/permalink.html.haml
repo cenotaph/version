@@ -37,8 +37,10 @@
       
     // scroll to item
     removeHash();
+    $('.slick-carousel').slick({autoplay: true});
     scrollTo('#overlay');
     removeHash();
+    resize_wrapper();
     $('.top_half .top .close').on('click', function() {
       $('#overlay').fadeOut();
       $('.version_module_closed.opened').removeClass('opened');
@@ -64,4 +66,13 @@
       scrollTo('#overlay');
       fix_url($(this).attr('rel'), $(this).attr('href'));
       removeHash();
+      $('.top_half .top .close').on('click', function() {
+        $('#overlay').fadeOut();
+        $('.version_module_closed.opened').removeClass('opened');
+        $.when(remove_permalink()).done(function() {
+          removeHash();
+        });
+        removeHash();
+      });
+      
     });

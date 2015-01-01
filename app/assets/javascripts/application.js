@@ -12,14 +12,28 @@ jQuery.expr.filters.offscreen = function(el) {
 };
 
 function check_overlay(destination) {
-  $("#overlay").css({top: destination.top, left: destination.left - $('body').offset().left - 10 });
-
-  $("#overlay").fadeIn();
-  if ($('#overlay').is(':off-right')) {
-    $("#overlay").css({top: destination.top, left: destination.left - $('body').offset().left - 350 });
+  if (parseInt($('body').css('width')) < 715) {
+    $("#overlay").css({top: destination.top, left: $('.version_wrapper').offset().left});
+  } else {
+    $("#overlay").css({top: destination.top, left: (destination.left - 5)});
   }
-  if ($('#overlay').is(':off-left')) {
-    $("#overlay").css({top: destination.top, left: "10px" });
+  $("#overlay").fadeIn();
+
+  if ($('#ajaxtarget').is(':off-right')) {
+
+    if (parseInt($('body').css('width')) < 715) {
+
+      $("#overlay").css({top: destination.top, left: $('.version_wrapper').offset().left });
+
+    } else {
+      $("#overlay").css({top: destination.top, left: destination.left - $('body').offset().left - 350 });
+    }
+  }
+  if ($('#ajaxtarget').is(':off-left')) {
+
+    $("#overlay").css({top: destination.top, left: $('.version_wrapper').offset().left});
+ 
+
   }
   
 }
