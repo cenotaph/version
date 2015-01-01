@@ -1,6 +1,6 @@
 class Admin::TextualsController < ApplicationController
     before_filter :authenticate_user!
-     use_tinymce 
+     # use_tinymce
     autocomplete :author, :name 
     def index
       @textuals = Textual.find(:all)

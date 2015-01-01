@@ -1,6 +1,6 @@
 class Admin::NewsController < ApplicationController
   before_filter :authenticate_user!
-    use_tinymce
+    # use_tinymce
 #      :options => {
 #                                    :theme => 'advanced',
 #                                    :theme_advanced_resizing => true,
