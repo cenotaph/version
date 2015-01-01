@@ -20,7 +20,7 @@ Version::Application.configure do
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
-  config.serve_static_files = false
+  config.serve_static_files = true
   config.eager_load = true
   config.log_level = :debug
   config.active_record.raise_in_transactional_callbacks = true
