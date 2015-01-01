@@ -20,9 +20,9 @@ Version::Application.configure do
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
-  config.serve_static_afiles = false
+  config.serve_static_files = false
   config.eager_load = true
-  config.log_level = :info
+  config.log_level = :debug
   config.active_record.raise_in_transactional_callbacks = true
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
