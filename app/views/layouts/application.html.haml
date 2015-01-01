@@ -9,27 +9,8 @@
     = javascript_include_tag :application
     - if request.fullpath =~ /^\/admin/
       = stylesheet_link_tag 'cms' 
-      = javascript_include_tag 'use_tinymce_init' 
+
     %link{:href => "/stylesheets/print.css", :media => "print", :rel => "stylesheet", :type => "text/css"}/
-    = javascript_include_tag 'audio-player'
-    :javascript
-      AudioPlayer.setup("/player.swf", {  
-            width: 600,  
-            initialvolume: 100,  
-            transparentpagebg: "yes",  
-            left: "000000",  
-            voltrack: "AD2026",
-            lefticon: "FFFFFF",
-            rightbg: "AD2026",
-            rightbghover: "666666",
-            righticon: "FFFFFF",  
-            tracker: "ffffff",
-            track:"eaeaea",
-            loader:"AD2026",
-            autostart: "yes",
-            noinfo: "yes",
-        });
-            
   
     %link{:href => "http://www.version.org/feed/", :rel => "alternate", :title => " - RSS", :type => "application/rss+xml"}/
     

@@ -24,6 +24,23 @@ Version::Application.configure do
   config.eager_load = true
   config.log_level = :debug
   config.active_record.raise_in_transactional_callbacks = true
+  
+  config.assets.compress = true
+ 
+  config.assets.compile = true
+ 
+  # Generate digests for assets URLs
+  config.assets.digest = true
+ 
+  config.assets.configure do |env|
+    env.js_compressor  = :uglify # or :closure, :yui
+
+    env.logger = Rails.logger
+ 
+    env.cache = ActiveSupport::Cache::FileStore.new("tmp/cache/assets")
+  end
+  
+  
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
