@@ -44,3 +44,7 @@ config/application.yml
 
 .keep
 bin
+public/sound/*
+config/deploy.rb
+config/deploy
+Capfile

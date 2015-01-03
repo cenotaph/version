@@ -30,18 +30,18 @@
           %img{:src => "/assets/twitter.png"}/
     %p{:style => "border-bottom: 1px solid #EAEAEA;  padding: 0px 20px 20px 0px; margin-bottom:20px;"}
       %em Version
-      is produced by the Visual Arts Department, University of California, San Diego; the UCSD Division of Arts and Humanities; the California Institute for Telecommunications and Information Technology (CAL-IT2); and the Software Studies Initiative.
+      is produced by the Visual Arts Department, University of California, San Diego; the UCSD Division of Arts and Humanities; and the California Institute for Telecommunications and Information Technology (CALIT2).
     %p{:style => "border-bottom: 1px solid #EAEAEA; padding: 0px 20px 20px 0px; margin-bottom:20px;"}
 
       %span.job Editors
       %br
       %span.person=link_to 'Jordan Crandall', 'http://www.jordancrandall.com/', target: :_blank
       %br
-      %span.person Cristina Rivera-Garza
+      %span.person= link_to 'Cristina Rivera-Garza', 'http://literature.ucsd.edu/people/faculty/criveragarza.html', target: :_blank
       %br
-      %span.person Allen Shelton
+      %span.person= link_to 'Allen Shelton', 'http://www.softarcades.com/', target: :_blank
       %br
-      %span.person Lesley Stern
+      %span.person= link_to 'Lesley Stern', 'http://www.lesleystern.net/', target: :_blank
       %br
       %br
       %span.job Managing Editor
@@ -56,9 +56,9 @@
       %br/
       %span.job Editorial Assistant
       %br/
-      %span.person Jeffrey Pinkston
+      %span.person Jeffery Pinkston
 
-    %p{:style => "border-bottom: 1px solid #EAEAEA;  padding: 0px 20px 20px 0px; margin-bottom:0px;font-size:11px; color:#666666;"} Additional support provided by the UCSD Center for the Humanities; the University of California Institute for Research in the Arts (UCIRA); the Center for Research in Computing and the Arts (CRCA); and the University of California Digital Arts Research Network (UC DARnet).
+    %p{:style => "border-bottom: 1px solid #EAEAEA;  padding: 0px 20px 20px 0px; margin-bottom:0px;font-size:11px; color:#666666;"} Additional support provided by the UCSD Center for the Humanities; the University of California Institute for Research in the Arts (UCIRA); and the University of California Digital Arts Research Network (UC DARnet).
   .right_column
     - @posts.each_index do |p|
       = render :partial => 'layouts/component', :locals => {:position => p, :item  => @posts[p].item, :side => '', :ajax => false}

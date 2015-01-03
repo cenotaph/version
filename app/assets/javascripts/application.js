@@ -2,7 +2,9 @@
 //= require jquery_ujs
 //= require jquery.viewport.mini
 //= require slick.min
+//= require jplayer
 
+ 
 jQuery.expr.filters.offscreen = function(el) {
   return (
               (el.offsetLeft + el.offsetWidth) < 0 
@@ -54,7 +56,21 @@ $(window).on('resize', function() {
 });
 
 
+function audio_launch(id,  url) {
+    $('.jp-jplayer').jPlayer("destroy");
+    $("#" + id).jPlayer({
+    ready: function() {
+             $(this).jPlayer("setMedia", {
+                mp3: url
+              }).jPlayer("play");
+          },
 
+    supplied: "mp3",
+    wmode: "window",
+   remainingDuration: true,
+   toggleDuration: true
+  });
+}
 
 function removeHash () { 
   history.pushState("", document.title, window.location.pathname + window.location.search);

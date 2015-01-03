@@ -16,6 +16,7 @@ GIT
 
 GEM
   remote: http://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
@@ -175,6 +176,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.0)
       sprockets-rails
+    rails-assets-jplayer (2.9.2)
+      rails-assets-jquery (>= 1.7.2)
+    rails-assets-jquery (2.1.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.5)
@@ -183,8 +187,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
-    rails4-autocomplete (1.1.1)
-      rails (>= 3.0)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -264,7 +266,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 4.2)
-  rails4-autocomplete
+  rails-assets-jplayer
   rails4_upgrade!
   sass-rails (~> 4.0.0)
   spring

@@ -3,6 +3,7 @@
  *= require mobile
  *= require slick
  *= require media
+ *= require jplayer
 */
 
 
@@ -130,6 +131,7 @@ border-bottom: 1px solid #999999;
 .version_module_closed .content .title ul li {
 	float: left;
 	padding:0px 0px 0px 0px;
+  white-space: nowrap;
 	}
 	
 .version_module_closed .content .bottom {
@@ -1323,3 +1325,10 @@ ul.context_about li a {border: none;}
 ul.context_about li a img {border: none;}
 
 
+.jp-controls-holder { 
+  width: 400px !important;
+}
+
+.jp-audio {
+  border: 1px solid #ad2026 !important;
+}

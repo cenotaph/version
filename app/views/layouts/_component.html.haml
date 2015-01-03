@@ -1,7 +1,7 @@
 .version_module_closed{id: "module_#{position}"}
   .top
     .logo
-  = link_to(item.post.permalink, {remote: ajax, class: :module, rel: position}) do
+  = link_to(item.post.permalink, {remote: ajax, class: :module, rel: item.post.item_type.downcase + '_' + item.id.to_s}) do
     .content
       .title
         %ul
@@ -14,7 +14,7 @@
           %li
             \.
             = item.title 
-            -#,  polymorphic_url(item, :routing_type => :path, :position => position), :remote => true, :id => item.class.to_s + "_#{item.id}"
+
 
 
           %li

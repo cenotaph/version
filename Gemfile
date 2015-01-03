@@ -1,6 +1,7 @@
 # Edit this Gemfile to bundle your application's dependencies.
 # This preamble is the current preamble for Rails 3 apps; edit as needed.
 source 'http://rubygems.org'
+source 'https://rails-assets.org'
 ruby '2.1.1'
 gem 'rails', '4.2'
 gem 'pg'
@@ -47,6 +48,6 @@ gem 'meta-tags', require: 'meta_tags'
 gem 'mini_magick'
 #gem 'mysql2'#, "~> 0.2.7"
 gem "nested_form"
-gem 'rails4-autocomplete'
+gem 'rails-assets-jplayer'
 
 # #gem 'use_tinymce'

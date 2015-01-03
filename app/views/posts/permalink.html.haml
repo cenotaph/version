@@ -6,7 +6,7 @@
       .version_module_closed.opened{id: "module_#{i}"}
         .top
           .logo
-        = link_to(mod.item.post, {remote: true, class: :module, rel: i}) do
+        = link_to(mod.item.post, {remote: true, class: :module, rel: mod.item_type.downcase + "_" + mod.item_id.to_s }) do
           .content
             .title
               %ul
@@ -43,6 +43,7 @@
     resize_wrapper();
     $('.top_half .top .close').on('click', function() {
       $('#overlay').fadeOut();
+      $('.jp-jplayer').jPlayer("destroy");
       $('.version_module_closed.opened').removeClass('opened');
       $.when(remove_permalink()).done(function() {
         removeHash();
@@ -58,8 +59,12 @@
       var destination = $(this).parent('.version_module_closed').offset();
      
       $("#ajaxtarget").html(xhr.responseText);
-      $('.slick-carousel').slick({autoplay: true});
 
+      $('.slick-carousel').slick({autoplay: true});
+      if (/^sound_/i.test($(this).attr('rel'))) {
+      
+        audio_launch($(this).attr('rel'), $('#ajaxtarget .sound_url').html());
+      }
 
       
       check_overlay(destination);
@@ -68,6 +73,7 @@
       removeHash();
       $('.top_half .top .close').on('click', function() {
         $('#overlay').fadeOut();
+        $('.jp-jplayer').jPlayer("destroy");
         $('.version_module_closed.opened').removeClass('opened');
         $.when(remove_permalink()).done(function() {
           removeHash();

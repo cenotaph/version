@@ -25,11 +25,15 @@
      
       $("#ajaxtarget").html(xhr.responseText);
       $('.slick-carousel').slick({autoplay: true});
-      // check if right side will be offscreen
-      // var rightborder = $('body').offset().left + 1050;
+
+
+      if (/^sound_/i.test($(this).attr('rel'))) {
+        audio_launch($(this).attr('rel'), $('#ajaxtarget .sound_url').html());
+      }
       
       $('.top_half .top .close').on('click', function() {
         $('#overlay').fadeOut();
+        $('.jp-jplayer').jPlayer("destroy");
         $('.version_module_closed.opened').removeClass('opened');
         $.when(remove_permalink()).done(function() {
           removeHash();
