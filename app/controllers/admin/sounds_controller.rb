@@ -3,7 +3,7 @@ class Admin::SoundsController < ApplicationController
   before_filter :authenticate_user!
   
   layout 'application'
-  autocomplete :author, :name   
+  #autocomplete :author, :name   
   # GET /sounds
   # GET /sounds.xml
   def index

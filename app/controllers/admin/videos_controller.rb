@@ -1,6 +1,6 @@
 class Admin::VideosController < ApplicationController
   before_filter :authenticate_user!
-  autocomplete :author, :name   
+  #autocomplete :author, :name   
   # GET /videos
   # GET /videos.xml
   def index

@@ -1,6 +1,6 @@
 class Admin::ImagesController < ApplicationController
    before_filter :authenticate_user!
-   autocomplete :author, :name  
+   #autocomplete :author, :name  
    def index
       @images = Image.find(:all)
 
