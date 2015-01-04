@@ -7,5 +7,13 @@ class Image < ActiveRecord::Base
   mount_uploader :image4, ImageUploader
   mount_uploader :image5, ImageUploader
 
+  def rss_out
+    out = ''
+    (1..5).each do |n|
+      out += "<img src=\"#{self.send('image' + n.to_s).url}\">"
+    end
+    out
+  end
+      
   
 end

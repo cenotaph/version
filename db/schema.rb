@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226125809) do
+ActiveRecord::Schema.define(version: 20150104133543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,18 +80,20 @@ ActiveRecord::Schema.define(version: 20141226125809) do
   add_index "posts", ["item_type", "item_id"], name: "index_posts_on_item_type_and_item_id", using: :btree
 
   create_table "sounds", force: :cascade do |t|
-    t.string   "title",             limit: 510
+    t.string   "title",                  limit: 510
     t.integer  "user_id"
     t.integer  "category_id"
     t.text     "description"
-    t.string   "soundfile",         limit: 510
+    t.string   "soundfile",              limit: 510
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
-    t.string   "short_description", limit: 510
-    t.string   "thumbnail",         limit: 510
-    t.string   "slug",              limit: 510
-    t.boolean  "published",                     default: false, null: false
+    t.string   "short_description",      limit: 510
+    t.string   "thumbnail",              limit: 510
+    t.string   "slug",                   limit: 510
+    t.boolean  "published",                          default: false, null: false
+    t.integer  "soundfile_file_size"
+    t.string   "soundfile_content_type"
   end
 
   add_index "sounds", ["slug"], name: "sounds_slug_key", unique: true, using: :btree

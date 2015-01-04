@@ -123,6 +123,16 @@
       }
     }
   }
+  
+  footer {
+    .support {
+      width: 100%;
+      img {
+        max-width: 320px;
+        height: auto;
+      }
+    }
+  }
 }
 
 
